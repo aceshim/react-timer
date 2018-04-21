@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, StatusBar } from 'react-native';
 import Button from '../Button';
+import { LinearGradient } from 'expo';
 
 function formatTime(time){
   let minutes = Math.floor(time/60);
-  time -= minutes * 60;
   let seconds = parseInt(time % 60, 10);
   return `${minutes < 10 ? `0${minutes}` : minutes}:${seconds < 10
     ? `0${seconds}`
@@ -40,7 +40,9 @@ export default class Timer extends Component{
     } = this.props;
     console.log(this.props);
     return(
-      <View style={styles.container}>
+      <LinearGradient
+        colors={["#CE0B24", "#FFBB54"]}
+        style={styles.container}>
         <StatusBar barStyle={"light-content"}/>
         <View style={styles.upper}>
           <Text style={styles.time}> {formatTime(timerDuration - elapsedTime)} </Text>
@@ -51,7 +53,7 @@ export default class Timer extends Component{
           { isPlaying && timerDuration != elapsedTime && (<Button iconName="stop-circle" onPress={restartTimer}/> )}
 
         </View>
-      </View>
+      </LinearGradient>
     )
   }
 }
