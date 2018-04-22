@@ -13,3 +13,6 @@ Expo QR(Open in Expo to run):
 DEMO:
 
 ![alt text](https://raw.githubusercontent.com/pensivej/react-timer/master/demo/demo.gif)
+
+RESOURCE:
+https://academy.nomadcoders.co/
